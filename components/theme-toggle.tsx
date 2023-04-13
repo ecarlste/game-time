@@ -23,12 +23,7 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" forceMount>
-        <DropdownMenuItem
-          onClick={() => {
-            console.log('set the theme to light');
-            setTheme('light');
-          }}
-        >
+        <DropdownMenuItem onClick={() => setTheme('light')}>
           <Icons.sun className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
