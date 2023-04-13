@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 import { HomeLogo } from '@/components/home-logo';
 import { Icons } from '@/components/icons';
 import { SessionControlMenuItem } from '@/components/session-control-menu-item';
-import { SessionControlNavItems } from '@/components/session-control-nav-items';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -46,7 +45,6 @@ export function MainNav({ items }: MainNavProps) {
                 </Link>
               )
           )}
-          <SessionControlNavItems />
         </nav>
       ) : null}
       <DropdownMenu>

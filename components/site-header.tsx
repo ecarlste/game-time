@@ -1,6 +1,7 @@
 import { siteConfig } from '@/config/site';
 import React from 'react';
 import { MainNav } from '@/components/main-nav';
+import { ProfileDropdown } from '@/components/profile-dropdown';
 import { ThemeToggle } from '@/components/theme-toggle';
 
 export function SiteHeader() {
@@ -10,6 +11,7 @@ export function SiteHeader() {
         <MainNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
+            <ProfileDropdown />
             <ThemeToggle />
           </nav>
         </div>
