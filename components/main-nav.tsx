@@ -6,7 +6,6 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { HomeLogo } from '@/components/home-logo';
 import { Icons } from '@/components/icons';
-import { SessionControlMenuItem } from '@/components/session-control-menu-item';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
