@@ -4,7 +4,10 @@ import Link from 'next/link';
 import { NavItem } from '@/types/nav';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
+import { HomeLogo } from '@/components/home-logo';
 import { Icons } from '@/components/icons';
+import { SessionControlMenuItem } from '@/components/session-control-menu-item';
+import { SessionControlNavItems } from '@/components/session-control-nav-items';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,20 +17,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useSession } from 'next-auth/react';
 
 interface MainNavProps {
   items?: NavItem[];
 }
 
 export function MainNav({ items }: MainNavProps) {
+  const session = useSession();
+
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
-      </Link>
+      <HomeLogo />
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map(
@@ -45,6 +46,7 @@ export function MainNav({ items }: MainNavProps) {
                 </Link>
               )
           )}
+          <SessionControlNavItems />
         </nav>
       ) : null}
       <DropdownMenu>
@@ -76,6 +78,8 @@ export function MainNav({ items }: MainNavProps) {
                 </DropdownMenuItem>
               )
           )}
+          <DropdownMenuSeparator />
+          <SessionControlMenuItem />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
