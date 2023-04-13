@@ -76,8 +76,6 @@ export function MainNav({ items }: MainNavProps) {
                 </DropdownMenuItem>
               )
           )}
-          <DropdownMenuSeparator />
-          <SessionControlMenuItem />
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
