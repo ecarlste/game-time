@@ -2,7 +2,7 @@ import { siteConfig } from '@/config/site';
 import React from 'react';
 import { MainNav } from '@/components/main-nav';
 import { ProfileDropdown } from '@/components/profile-dropdown';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { ThemeToggle } from './theme-toggle';
 
 export function SiteHeader() {
   return (
